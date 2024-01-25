@@ -8,81 +8,87 @@ if ( !$connection ) {
 } else {
     $action = $_REQUEST['action'] ?? '';
 
-    if ( 'addManager' == $action ) {
+    if ( 'addMoniteur' == $action ) {
         $fname = $_REQUEST['fname'] ?? '';
         $lname = $_REQUEST['lname'] ?? '';
         $email = $_REQUEST['email'] ?? '';
         $phone = $_REQUEST['phone'] ?? '';
+        $ville = $_REQUEST['ville'] ?? '';
         $password = $_REQUEST['password'] ?? '';
 
         if ( $fname && $lname && $lname && $phone && $password ) {
             $hashPassword = password_hash( $password, PASSWORD_BCRYPT );
-            $query = "INSERT INTO managers(fname,lname,email,phone,password) VALUES ('{$fname}','$lname','$email','$phone','$hashPassword')";
+            $query = "INSERT INTO moniteurs(fname,lname,email,phone,ville,password) VALUES ('{$fname}','$lname','$email','$phone','$ville','$hashPassword')";
             mysqli_query( $connection, $query );
-            header( "location:index.php?id=allManager" );
+            header( "location:index.php?id=allMoniteur" );
         }
 
-    } elseif ( 'updateManager' == $action ) {
+    } elseif ( 'updateMoniteur' == $action ) {
         $id = $_REQUEST['id'] ?? '';
         $fname = $_REQUEST['fname'] ?? '';
         $lname = $_REQUEST['lname'] ?? '';
         $email = $_REQUEST['email'] ?? '';
         $phone = $_REQUEST['phone'] ?? '';
+        $ville = $_REQUEST['ville'] ?? '';
 
         if ( $fname && $lname && $lname && $phone ) {
-            $query = "UPDATE managers SET fname='{$fname}', lname='{$lname}', email='$email', phone='$phone' WHERE id='{$id}'";
+            $query = "UPDATE moniteurs SET fname='{$fname}', lname='{$lname}', email='$email', phone='$phone', ville='$ville' WHERE id='{$id}'";
             mysqli_query( $connection, $query );
-            header( "location:index.php?id=allManager" );
+            header( "location:index.php?id=allMoniteur" );
         }
-    } elseif ( 'addProfesseur' == $action ) {
+    } elseif ( 'addAdherent' == $action ) {
         $fname = $_REQUEST['fname'] ?? '';
         $lname = $_REQUEST['lname'] ?? '';
         $email = $_REQUEST['email'] ?? '';
         $phone = $_REQUEST['phone'] ?? '';
+        $ville = $_REQUEST['ville'] ?? '';
         $password = $_REQUEST['password'] ?? '';
 
         if ( $fname && $lname && $lname && $phone && $password ) {
             $hashPassword = password_hash( $password, PASSWORD_BCRYPT );
-            $query = "INSERT INTO professeurs(fname,lname,email,phone,password) VALUES ('{$fname}','$lname','$email','$phone','$hashPassword')";
+            $query = "INSERT INTO adherents(fname,lname,email,phone,password) VALUES ('{$fname}','$lname','$email','$phone','$ville','$hashPassword')";
             mysqli_query( $connection, $query );
-            header( "location:index.php?id=allProfesseur" );
+            header( "location:index.php?id=allAdherent" );
         }
-    } elseif ( 'updateProfesseur' == $action ) {
+    } elseif ( 'updateAdherent' == $action ) {
         $id = $_REQUEST['id'] ?? '';
         $fname = $_REQUEST['fname'] ?? '';
         $lname = $_REQUEST['lname'] ?? '';
         $email = $_REQUEST['email'] ?? '';
         $phone = $_REQUEST['phone'] ?? '';
+        $ville = $_REQUEST['ville'] ?? '';
 
         if ( $fname && $lname && $lname && $phone ) {
-            $query = "UPDATE professeurs SET fname='{$fname}', lname='{$lname}', email='$email', phone='$phone' WHERE id='{$id}'";
+            $query = "UPDATE adherents SET fname='{$fname}', lname='{$lname}', email='$email', phone='$phone', ville='$ville' WHERE id='{$id}'";
             mysqli_query( $connection, $query );
-            header( "location:index.php?id=allProfesseur" );
+            header( "location:index.php?id=allAdherent" );
         }
-    } elseif ( 'addEtudiant' == $action ) {
-        $fname = $_REQUEST['fname'] ?? '';
-        $lname = $_REQUEST['lname'] ?? '';
-        $email = $_REQUEST['email'] ?? '';
-        $phone = $_REQUEST['phone'] ?? '';
-        $password = $_REQUEST['password'] ?? '';
+    } elseif ( 'addSeance' == $action ) {
+        $idM = $_REQUEST['idM'] ?? '';
+        $idA = $_REQUEST['idA'] ?? '';
+        $dateS = $_REQUEST['dateS'] ?? '';
+        $heureS = $_REQUEST['heureS'] ?? '';
+        $nbHeures = $_REQUEST['nbHeures'] ?? '';
 
-        if ( $fname && $lname && $lname && $phone && $password ) {
-            $hashPassword = password_hash( $password, PASSWORD_BCRYPT );
-            $query = "INSERT INTO etudiants(fname,lname,email,phone,password) VALUES ('{$fname}','$lname','$email','$phone','$hashPassword')";
+
+
+        if ( $idM && $idA && $dateS && $heureS && $nbHeures ) {
+            $query = "INSERT INTO seances(idM,idA,dateS,heureS,nbHeures) VALUES ('{$idM}','$idA','$dateS','$heureS','$nbHeures')";
             mysqli_query( $connection, $query );
-            header( "location:index.php?id=allEtudiant" );
+            header( "location:index.php?id=allSeance" );
         }
-    } elseif ( 'updateEtudiant' == $action ) {
+    } elseif ( 'updateSeance' == $action ) {
         $id = $_REQUEST['id'] ?? '';
-        $fname = $_REQUEST['fname'] ?? '';
-        $lname = $_REQUEST['lname'] ?? '';
-        $email = $_REQUEST['email'] ?? '';
-        $phone = $_REQUEST['phone'] ?? '';
+        $idM = $_REQUEST['idM'] ?? '';
+        $idA = $_REQUEST['idA'] ?? '';
+        $dateS = $_REQUEST['dateS'] ?? '';
+        $heureS = $_REQUEST['heureS'] ?? '';
+        $nbHeures = $_REQUEST['nbHeures'] ?? '';
 
-        if ( $fname && $lname && $lname && $phone ) {
-            $query = "UPDATE etudiants SET fname='{$fname}', lname='{$lname}', email='$email', phone='$phone' WHERE id='{$id}'";
+        if ( $idM && $idA && $dateS) {
+            $query = "UPDATE seances SET idM='{$idM}', idA='{$idA}', dateS='$dateS', heureS='$heureS', nbHeures='$nbHeures' WHERE id='{$id}'";
             mysqli_query( $connection, $query );
-            header( "location:index.php?id=allEtudiant" );
+            header( "location:index.php?id=allSeance" );
         }
     } elseif ( 'updateProfile' == $action ) {
 
@@ -90,6 +96,7 @@ if ( !$connection ) {
         $lname = $_REQUEST['lname'] ?? '';
         $email = $_REQUEST['email'] ?? '';
         $phone = $_REQUEST['phone'] ?? '';
+        $ville = $_REQUEST['ville'] ?? '';
         $oldPassword = $_REQUEST['oldPassword'] ?? '';
         $newPassword = $_REQUEST['newPassword'] ?? '';
         $sessionId = $_SESSION['id'] ?? '';
@@ -123,7 +130,7 @@ if ( !$connection ) {
                 }
                 if ( password_verify( $oldPassword, $_password ) ) {
                     $hashPassword = password_hash( $newPassword, PASSWORD_BCRYPT );
-                    $updateQuery = "UPDATE {$sessionRole}s SET fname='{$fname}', lname='{$lname}', email='{$email}', phone='{$phone}', password='{$hashPassword}', avatar='{$avatarName}' WHERE id='{$sessionId}'";
+                    $updateQuery = "UPDATE {$sessionRole}s SET fname='{$fname}', lname='{$lname}', email='{$email}', phone='{$phone}', ville='{$ville}' password='{$hashPassword}', avatar='{$avatarName}' WHERE id='{$sessionId}'";
                     mysqli_query( $connection, $updateQuery );
 
                     header( "location:index.php?id=userProfile" );

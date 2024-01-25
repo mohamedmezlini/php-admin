@@ -1,0 +1,73 @@
+Système de gestion de personnel
+
+-----------------------------------------------------------------------------
+
+
+gestions_cours
+Un club de planche à voile donne des cours à ses adhérents. 
+Afin de gérer un responsable exploite la base de données «Gestion_ Seancee décrite par le schéma simplifié suivant :
+Adhérent(IdA, NomA, PrénomA, Ville)
+Moniteur(IdM, NomM, PrénomM)
+Séance(IdM, IdA, DateS, HeureS, NbHeures)
+
+
+Admin:
+	1.Voir Dashboard
+	2.Voir tous  Moniteur, Ajouter un nouveau moniteur, Modifier Moniteur, Supprimer Moniteur
+	3.Voir tous  Adherent, Ajouter un nouveau adherent, Modifier adherent, Supprimer Adherent
+	4.Voir tous  Seance, Ajouter un nouveau seance, Modifier Seance, Supprimer Seance
+	5.Modifier Profil
+	6.Changer mot de passe
+
+Moniteur:
+	1.Voir Dashboard
+	2.Voir tous  Moniteur
+	3.Voir tous  Adherent, Ajouter un nouveau adherent, Modifier adherent, Supprimer Adherent
+	4.Voir tous  Seance, Ajouter un nouveau seance, Modifier Seance, Supprimer Seance
+	5.Modifier Profil
+	6.Changer mot de passe
+
+Adherent:
+	1.Voir Dashboard
+	2.Voir tous  Moniteur
+	3.Voir tous  Adherent
+	4.Voir tous  Seance, Ajouter un nouveau seance, Modifier Seance, Supprimer Seance
+	5.Modifier Profil
+	6.Changer mot de passe
+
+Seance:
+	1.Voir Dashboard
+	2.Voir tous  Moniteur
+	3.Voir tous  Adherent
+	4.Voir tous  Seance
+	5.Modifier Profil
+	6.Changer mot de passe
+
+
+
+Login as Admin:
+	Email: admin@admin.com
+	Password : admin1
+	Role: Admin
+
+Login as Moniteur:
+	Ajouter Nouveau a moniteur to become Admin
+	then logout from admin and login as a moniteur
+
+	Or if you have a moniteur account
+	login just type your email and passwod and role=moniteur
+
+Login as Adherent:
+	Ajouter Nouveau a adherent to become Admin or Moniteur
+	then logout from admin or moniteur and login as a Adherent
+
+	Or if you have a Adherent account
+	login just type your email and passwod and role=Adherent
+
+Login as Seance:
+	Ajouter Nouveau a seance to become Admin, Moniteur or adherent
+	then logout from admin, moniteur, adherent and login as a Seance
+
+	Or if you have a Seance account
+	login just type your email and passwod and role=seance
+

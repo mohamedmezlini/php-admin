@@ -53,9 +53,8 @@
                                 <i id="left" class="fas fa-male left"></i>
                                 <select name="role" id="Role">
                                     <option value="admins">Admin</option>
-                                    <option value="managers">Manager</option>
-                                    <option value="professeurs">Professeur</option>
-                                    <option value="etudiants">Etudiant</option>
+                                    <option value="moniteurs">Moniteur</option>
+                                    <option value="adherents">Adherent</option>
                                 </select>
                             </label>
                         </div>

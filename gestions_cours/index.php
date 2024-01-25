@@ -45,26 +45,26 @@
                 <?php
                     if ( 'dashboard' == $id ) {
                         echo "Dashboard";
-                    } elseif ( 'addManager' == $id ) {
-                        echo "Ajouter un nouveau manager";
-                    } elseif ( 'allManager' == $id ) {
-                        echo "Managers";
-                    } elseif ( 'addProfesseur' == $id ) {
-                        echo "Ajouter un nouveau professeur";
-                    } elseif ( 'allProfesseur' == $id ) {
-                        echo "Professeurs";
-                    } elseif ( 'addEtudiant' == $id ) {
-                        echo "Ajouter un nouveau etudiant";
-                    } elseif ( 'allEtudiant' == $id ) {
-                        echo "Etudiants";
+                    } elseif ( 'addMoniteur' == $id ) {
+                        echo "Ajouter un nouveau moniteur";
+                    } elseif ( 'allMoniteur' == $id ) {
+                        echo "Moniteurs";
+                    } elseif ( 'addAdherent' == $id ) {
+                        echo "Ajouter un nouveau adherent";
+                    } elseif ( 'allAdherent' == $id ) {
+                        echo "Adherents";
+                    } elseif ( 'addSeance' == $id ) {
+                        echo "Ajouter un nouveau seance";
+                    } elseif ( 'allSeance' == $id ) {
+                        echo "Seances";
                     } elseif ( 'userProfile' == $id ) {
                         echo "Votre Profil";
-                    } elseif ( 'editManager' == $action ) {
-                        echo "Modifier Manager";
-                    } elseif ( 'editProfesseur' == $action ) {
-                        echo "Modifier Professeur";
-                    } elseif ( 'editEtudiant' == $action ) {
-                        echo "Modifier Etudiant";
+                    } elseif ( 'editMoniteur' == $action ) {
+                        echo "Modifier Moniteur";
+                    } elseif ( 'editAdherent' == $action ) {
+                        echo "Modifier Adherent";
+                    } elseif ( 'editSeance' == $action ) {
+                        echo "Modifier Seance";
                     }
                 ?>
 
@@ -112,40 +112,40 @@
             </li>
             <?php if ( 'admin' == $sessionRole ) {?>
                 <!-- Only For Admin -->
-                <li id="left" class="sideber__item sideber__item--modify<?php if ( 'addManager' == $id ) {
+                <li id="left" class="sideber__item sideber__item--modify<?php if ( 'addMoniteur' == $id ) {
                                                                             echo " active";
                                                                         }?>">
-                    <a href="index.php?id=addManager"><i id="left" class="fas fa-user-plus"></i></i>Ajouter Manager</a>
+                    <a href="index.php?id=addMoniteur"><i id="left" class="fas fa-user-plus"></i></i>Ajouter Moniteur</a>
                 </li><?php }?>
-            <li id="left" class="sideber__item<?php if ( 'allManager' == $id ) {
+            <li id="left" class="sideber__item<?php if ( 'allMoniteur' == $id ) {
     echo " active";
 }?>">
-                <a href="index.php?id=allManager"><i id="left" class="fas fa-user"></i>Tous les Manager</a>
+                <a href="index.php?id=allMoniteur"><i id="left" class="fas fa-user"></i>Tous les Moniteur</a>
             </li>
-            <?php if ( 'admin' == $sessionRole || 'manager' == $sessionRole ) {?>
-                <!-- For Admin, Manager -->
-                <li id="left" class="sideber__item sideber__item--modify<?php if ( 'addProfesseur' == $id ) {
+            <?php if ( 'admin' == $sessionRole || 'moniteur' == $sessionRole ) {?>
+                <!-- For Admin, Moniteur -->
+                <li id="left" class="sideber__item sideber__item--modify<?php if ( 'addAdherent' == $id ) {
                                                                             echo " active";
                                                                         }?>">
-                    <a href="index.php?id=addProfesseur"><i id="left" class="fas fa-user-plus"></i></i>Ajouter  
-                        Professeur</a>
+                    <a href="index.php?id=addAdherent"><i id="left" class="fas fa-user-plus"></i></i>Ajouter  
+                        Adherent</a>
                 </li><?php }?>
-            <li id="left" class="sideber__item<?php if ( 'allProfesseur' == $id ) {
+            <li id="left" class="sideber__item<?php if ( 'allAdherent' == $id ) {
     echo " active";
 }?>">
-                <a href="index.php?id=allProfesseur"><i id="left" class="fas fa-user"></i>Tous les professeurs</a>
+                <a href="index.php?id=allAdherent"><i id="left" class="fas fa-user"></i>Tous les adherents</a>
             </li>
-            <?php if ( 'admin' == $sessionRole || 'manager' == $sessionRole || 'professeur' == $sessionRole ) {?>
-                <!-- For Admin, Manager, Professeur-->
-                <li id="left" class="sideber__item sideber__item--modify<?php if ( 'addEtudiant' == $id ) {
+            <?php if ( 'admin' == $sessionRole || 'moniteur' == $sessionRole || 'adherent' == $sessionRole ) {?>
+                <!-- For Admin, Moniteur, Adherent-->
+                <li id="left" class="sideber__item sideber__item--modify<?php if ( 'addSeance' == $id ) {
                                                                             echo " active";
                                                                         }?>">
-                    <a href="index.php?id=addEtudiant"><i id="left" class="fas fa-user-plus"></i>Ajouter  Etudiant</a>
+                    <a href="index.php?id=addSeance"><i id="left" class="fas fa-user-plus"></i>Ajouter  Seance</a>
                 </li><?php }?>
-            <li id="left" class="sideber__item<?php if ( 'allEtudiant' == $id ) {
+            <li id="left" class="sideber__item<?php if ( 'allSeance' == $id ) {
     echo " active";
 }?>">
-                <a href="index.php?id=allEtudiant"><i id="left" class="fas fa-user"></i>Tous les etudiants</a>
+                <a href="index.php?id=allSeance"><i id="left" class="fas fa-user"></i>Toutes les seances</a>
             </li>
         </ul>
         <footer class="text-center"><span>SGP</span><br>©2024 Tous droits réservés.</footer>
@@ -166,20 +166,16 @@
                                 <div class="total__box text-center" >
                                     <h1>                                        
                                     <?php
-                                            $query = "SELECT COUNT(*) totalManager FROM managers;";
+                                            $query = "SELECT COUNT(*) totalMoniteur FROM moniteurs;";
                                                 $result = mysqli_query( $connection, $query );
-                                                $totalManager = mysqli_fetch_assoc( $result );
+                                                $totalMoniteur = mysqli_fetch_assoc( $result );
 
-                                                $query = "SELECT COUNT(*) totalProfesseur FROM professeurs;";
+                                                $query = "SELECT COUNT(*) totalAdherent FROM adherents;";
                                                 $result = mysqli_query( $connection, $query );
-                                                $totalProfesseur = mysqli_fetch_assoc( $result );
+                                                $totalAdherent = mysqli_fetch_assoc( $result );
                                                
-                                                $query = "SELECT COUNT(*) totalEtudiant FROM etudiants;";
-                                                $result = mysqli_query( $connection, $query );
-                                                $totalEtudiant = mysqli_fetch_assoc( $result );
-                                            
 
-                                                echo $totalManager['totalManager'] + $totalProfesseur['totalProfesseur'] + $totalEtudiant['totalEtudiant'];
+                                                echo $totalMoniteur['totalMoniteur'] + $totalAdherent['totalAdherent'] ;
                                             ?>
                                     </h1>
                                     <h3>Effectif total</h3>
@@ -187,41 +183,41 @@
                             </div> 
 
                             <div class="col-3">
-                                <div class="total__box__manager text-center">
+                                <div class="total__box__moniteur text-center">
                                     <h1>
                                         <?php
-                                            $query = "SELECT COUNT(*) totalManager FROM managers;";
+                                            $query = "SELECT COUNT(*) totalMoniteur FROM moniteurs;";
                                                 $result = mysqli_query( $connection, $query );
-                                                $totalManager = mysqli_fetch_assoc( $result );
-                                                echo $totalManager['totalManager'];
+                                                $totalMoniteur = mysqli_fetch_assoc( $result );
+                                                echo $totalMoniteur['totalMoniteur'];
                                             ?>
                                     </h1>
-                                    <h3>Managers </h3>
+                                    <h3>Moniteurs </h3>
                                 </div>
                             </div>
                             <div class="col-3">
                                 <div class="total__box__prof text-center">
                                     <h1>
                                         <?php
-                                            $query = "SELECT COUNT(*) totalProfesseur FROM professeurs;";
+                                            $query = "SELECT COUNT(*) totalAdherent FROM adherents;";
                                                 $result = mysqli_query( $connection, $query );
-                                                $totalProfesseur = mysqli_fetch_assoc( $result );
-                                                echo $totalProfesseur['totalProfesseur'];
+                                                $totalAdherent = mysqli_fetch_assoc( $result );
+                                                echo $totalAdherent['totalAdherent'];
                                             ?>
 
                                     </h1>
-                                    <h3>Professeurs</h3>
+                                    <h3>Adherents</h3>
                                 </div>
                             </div>
                             <div class="col-3">
-                                <div class="total__box__etudiant text-center">
+                                <div class="total__box__seance text-center">
                                     <h1><?php
-                                            $query = "SELECT COUNT(*) totalEtudiant FROM etudiants;";
+                                            $query = "SELECT COUNT(*) totalSeance FROM seances;";
                                                 $result = mysqli_query( $connection, $query );
-                                                $totalEtudiant = mysqli_fetch_assoc( $result );
-                                            echo $totalEtudiant['totalEtudiant'];
+                                                $totalSeance = mysqli_fetch_assoc( $result );
+                                            echo $totalSeance['totalSeance'];
                                             ?></h1>
-                                    <h3>Etudiants</h3>
+                                    <h3>Seances</h3>
                                 </div>
                             </div>
                         </div>
@@ -230,10 +226,10 @@
             <?php }?>
             <!-- ---------------------- Dashboard ------------------------ -->
 
-            <!-- ---------------------- Manager ------------------------ -->
-            <div class="manager">
-                <?php if ( 'allManager' == $id ) {?>
-                    <div class="allManager">
+            <!-- ---------------------- Moniteur ------------------------ -->
+            <div class="moniteur">
+                <?php if ( 'allMoniteur' == $id ) {?>
+                    <div class="allMoniteur">
                         <div class="main__table">
                             <table class="table">
                                 <thead>
@@ -242,6 +238,7 @@
                                         <th scope="col">Nom</th>
                                         <th scope="col">Email</th>
                                         <th scope="col">Phone</th>
+                                        <th scope="col">Ville</th>
                                         <?php if ( 'admin' == $sessionRole ) {?>
                                             <!-- Only For Admin -->
                                             <th scope="col">Modifier</th>
@@ -252,22 +249,23 @@
                                 <tbody>
 
                                     <?php
-                                        $getManagers = "SELECT * FROM managers";
-                                            $result = mysqli_query( $connection, $getManagers );
+                                        $getMoniteurs = "SELECT * FROM moniteurs";
+                                            $result = mysqli_query( $connection, $getMoniteurs );
 
-                                        while ( $manager = mysqli_fetch_assoc( $result ) ) {?>
+                                        while ( $moniteur = mysqli_fetch_assoc( $result ) ) {?>
 
                                         <tr>
                                             <td>
-                                                <center><img class="rounded-circle" width="40" height="40" src="assets/img/<?php echo $manager['avatar']; ?>" alt=""></center>
+                                                <center><img class="rounded-circle" width="40" height="40" src="assets/img/<?php echo $moniteur['avatar']; ?>" alt=""></center>
                                             </td>
-                                            <td><?php printf( "%s %s", $manager['fname'], $manager['lname'] );?></td>
-                                            <td><?php printf( "%s", $manager['email'] );?></td>
-                                            <td><?php printf( "%s", $manager['phone'] );?></td>
+                                            <td><?php printf( "%s %s", $moniteur['fname'], $moniteur['lname'] );?></td>
+                                            <td><?php printf( "%s", $moniteur['email'] );?></td>
+                                            <td><?php printf( "%s", $moniteur['phone'] );?></td>
+                                            <td><?php printf( "%s", $moniteur['ville'] );?></td>
                                             <?php if ( 'admin' == $sessionRole ) {?>
                                                 <!-- Only For Admin -->
-                                                <td><?php printf( "<a href='index.php?action=editManager&id=%s'><i class='fas fa-edit'></i></a>", $manager['id'] )?></td>
-                                                <td><?php printf( "<a class='delete' href='index.php?action=deleteManager&id=%s'><i class='fas fa-trash'></i></a>", $manager['id'] )?></td>
+                                                <td><?php printf( "<a href='index.php?action=editMoniteur&id=%s'><i class='fas fa-edit'></i></a>", $moniteur['id'] )?></td>
+                                                <td><?php printf( "<a class='delete' href='index.php?action=deleteMoniteur&id=%s'><i class='fas fa-trash'></i></a>", $moniteur['id'] )?></td>
                                             <?php }?>
                                         </tr>
 
@@ -281,10 +279,10 @@
                     </div>
                 <?php }?>
 
-                <?php if ( 'addManager' == $id ) {?>
-                    <div class="addManager">
+                <?php if ( 'addMoniteur' == $id ) {?>
+                    <div class="addMoniteur">
                         <div class="main__form">
-                            <div class="main__form--title text-center">Ajouter un nouveau manager</div>
+                            <div class="main__form--title text-center">Ajouter un nouveau moniteur</div>
                             <form action="add.php" method="POST">
                                 <div class="form-row">
                                     <div class="col col-12">
@@ -313,12 +311,18 @@
                                     </div>
                                     <div class="col col-12">
                                         <label class="input">
+                                            <i id="left" class="fas fa-city"></i>
+                                            <input type="text" name="ville" placeholder="Ville"  required>
+                                        </label>
+                                    </div>
+                                    <div class="col col-12">
+                                        <label class="input">
                                             <i id="left" class="fas fa-key"></i>
                                             <input id="pwdinput" type="password" name="password" placeholder="Mot de passe" required>
                                             <i id="pwd" class="fas fa-eye right"></i>
                                         </label>
                                     </div>
-                                    <input type="hidden" name="action" value="addManager">
+                                    <input type="hidden" name="action" value="addMoniteur">
                                     <div class="col col-12">
                                         <input type="submit" value="Enregistrer">
                                     </div>
@@ -329,43 +333,49 @@
                     </div>
                 <?php }?>
 
-                <?php if ( 'editManager' == $action ) {
-                        $managerId = $_REQUEST['id'];
-                        $selectManagers = "SELECT * FROM managers WHERE id='{$managerId}'";
-                        $result = mysqli_query( $connection, $selectManagers );
+                <?php if ( 'editMoniteur' == $action ) {
+                        $moniteurId = $_REQUEST['id'];
+                        $selectMoniteurs = "SELECT * FROM moniteurs WHERE id='{$moniteurId}'";
+                        $result = mysqli_query( $connection, $selectMoniteurs );
 
-                    $manager = mysqli_fetch_assoc( $result );?>
-                    <div class="addManager">
+                    $moniteur = mysqli_fetch_assoc( $result );?>
+                    <div class="addMoniteur">
                         <div class="main__form">
-                            <div class="main__form--title text-center">Mettre à jour  Manager</div>
+                            <div class="main__form--title text-center">Mettre à jour  Moniteur</div>
                             <form action="add.php" method="POST">
                                 <div class="form-row">
                                     <div class="col col-12">
                                         <label class="input">
                                             <i id="left" class="fas fa-user-circle"></i>
-                                            <input type="text" name="fname" placeholder="Nom" value="<?php echo $manager['fname']; ?>" required>
+                                            <input type="text" name="fname" placeholder="Nom" value="<?php echo $moniteur['fname']; ?>" required>
                                         </label>
                                     </div>
                                     <div class="col col-12">
                                         <label class="input">
                                             <i id="left" class="fas fa-user-circle"></i>
-                                            <input type="text" name="lname" placeholder="Prénom" value="<?php echo $manager['lname']; ?>" required>
+                                            <input type="text" name="lname" placeholder="Prénom" value="<?php echo $moniteur['lname']; ?>" required>
                                         </label>
                                     </div>
                                     <div class="col col-12">
                                         <label class="input">
                                             <i id="left" class="fas fa-envelope"></i>
-                                            <input type="email" name="email" placeholder="Email" value="<?php echo $manager['email']; ?>" required>
+                                            <input type="email" name="email" placeholder="Email" value="<?php echo $moniteur['email']; ?>" required>
                                         </label>
                                     </div>
                                     <div class="col col-12">
                                         <label class="input">
                                             <i id="left" class="fas fa-phone-alt"></i>
-                                            <input type="number" name="phone" placeholder="Phone" value="<?php echo $manager['phone']; ?>" required>
+                                            <input type="number" name="phone" placeholder="Phone" value="<?php echo $moniteur['phone']; ?>" required>
                                         </label>
                                     </div>
-                                    <input type="hidden" name="action" value="updateManager">
-                                    <input type="hidden" name="id" value="<?php echo $managerId; ?>">
+                                    <div class="col col-12">
+                                        <label class="input">
+                                            <i id="left" class="fas fa-city"></i>
+                                            <input type="text" name="ville" placeholder="Ville" value="<?php echo $moniteur['ville']; ?>" required>
+                                        </label>
+                                    </div>
+                                    <input type="hidden" name="action" value="updateMoniteur">
+                                    <input type="hidden" name="id" value="<?php echo $moniteurId; ?>">
                                     <div class="col col-12">
                                         <input type="submit" value="Enregistrer">
                                     </div>
@@ -375,19 +385,19 @@
                     </div>
                 <?php }?>
 
-                <?php if ( 'deleteManager' == $action ) {
-                        $managerId = $_REQUEST['id'];
-                        $deleteManager = "DELETE FROM managers WHERE id ='{$managerId}'";
-                        $result = mysqli_query( $connection, $deleteManager );
-                        header( "location:index.php?id=allManager" );
+                <?php if ( 'deleteMoniteur' == $action ) {
+                        $moniteurId = $_REQUEST['id'];
+                        $deleteMoniteur = "DELETE FROM moniteurs WHERE id ='{$moniteurId}'";
+                        $result = mysqli_query( $connection, $deleteMoniteur );
+                        header( "location:index.php?id=allMoniteur" );
                 }?>
             </div>
-            <!-- ---------------------- Manager ------------------------ -->
+            <!-- ---------------------- Moniteur ------------------------ -->
 
-            <!-- ---------------------- Professeur ------------------------ -->
-            <div class="professeur">
-                <?php if ( 'allProfesseur' == $id ) {?>
-                    <div class="allProfesseur">
+            <!-- ---------------------- Adherent ------------------------ -->
+            <div class="adherent">
+                <?php if ( 'allAdherent' == $id ) {?>
+                    <div class="allAdherent">
                         <div class="main__table">
                             <table class="table">
                                 <thead>
@@ -396,8 +406,9 @@
                                         <th scope="col">Nom</th>
                                         <th scope="col">Email</th>
                                         <th scope="col">Phone</th>
-                                        <?php if ( 'admin' == $sessionRole || 'manager' == $sessionRole ) {?>
-                                            <!-- For Admin, Manager -->
+                                        <th scope="col">Ville</th>
+                                        <?php if ( 'admin' == $sessionRole || 'moniteur' == $sessionRole ) {?>
+                                            <!-- For Admin, Moniteur -->
                                             <th scope="col">Modifier</th>
                                             <th scope="col">Supprimer</th>
                                         <?php }?>
@@ -406,22 +417,23 @@
                                 <tbody>
 
                                     <?php
-                                        $getProfesseur = "SELECT * FROM professeurs";
-                                            $result = mysqli_query( $connection, $getProfesseur );
+                                        $getAdherent = "SELECT * FROM adherents";
+                                            $result = mysqli_query( $connection, $getAdherent );
 
-                                        while ( $professeur = mysqli_fetch_assoc( $result ) ) {?>
+                                        while ( $adherent = mysqli_fetch_assoc( $result ) ) {?>
 
                                         <tr>
                                             <td>
-                                                <center><img class="rounded-circle" width="40" height="40" src="assets/img/<?php echo $professeur['avatar']; ?>" alt=""></center>
+                                                <center><img class="rounded-circle" width="40" height="40" src="assets/img/<?php echo $adherent['avatar']; ?>" alt=""></center>
                                             </td>
-                                            <td><?php printf( "%s %s", $professeur['fname'], $professeur['lname'] );?></td>
-                                            <td><?php printf( "%s", $professeur['email'] );?></td>
-                                            <td><?php printf( "%s", $professeur['phone'] );?></td>
-                                            <?php if ( 'admin' == $sessionRole || 'manager' == $sessionRole ) {?>
-                                                <!-- For Admin, Manager -->
-                                                <td><?php printf( "<a href='index.php?action=editProfesseur&id=%s'><i class='fas fa-edit'></i></a>", $professeur['id'] )?></td>
-                                                <td><?php printf( "<a class='delete' href='index.php?action=deleteProfesseur&id=%s'><i class='fas fa-trash'></i></a>", $professeur['id'] )?></td>
+                                            <td><?php printf( "%s %s", $adherent['fname'], $adherent['lname'] );?></td>
+                                            <td><?php printf( "%s", $adherent['email'] );?></td>
+                                            <td><?php printf( "%s", $adherent['phone'] );?></td>
+                                            <td><?php printf( "%s", $adherent['ville'] );?></td>
+                                            <?php if ( 'admin' == $sessionRole || 'moniteur' == $sessionRole ) {?>
+                                                <!-- For Admin, Moniteur -->
+                                                <td><?php printf( "<a href='index.php?action=editAdherent&id=%s'><i class='fas fa-edit'></i></a>", $adherent['id'] )?></td>
+                                                <td><?php printf( "<a class='delete' href='index.php?action=deleteAdherent&id=%s'><i class='fas fa-trash'></i></a>", $adherent['id'] )?></td>
                                             <?php }?>
                                         </tr>
 
@@ -435,10 +447,10 @@
                     </div>
                 <?php }?>
 
-                <?php if ( 'addProfesseur' == $id ) {?>
-                    <div class="addProfesseur">
+                <?php if ( 'addAdherent' == $id ) {?>
+                    <div class="addAdherent">
                         <div class="main__form">
-                            <div class="main__form--title text-center">Ajouter un nouveau professeur</div>
+                            <div class="main__form--title text-center">Ajouter un nouveau adherent</div>
                             <form action="add.php" method="POST">
                                 <div class="form-row">
                                     <div class="col col-12">
@@ -467,12 +479,18 @@
                                     </div>
                                     <div class="col col-12">
                                         <label class="input">
+                                            <i id="left" class="fas fa-city"></i>
+                                            <input type="text" name="ville" placeholder="Ville"  required>
+                                        </label>
+                                    </div>
+                                    <div class="col col-12">
+                                        <label class="input">
                                             <i id="left" class="fas fa-key"></i>
-                                            <input id="pwdinput" type="password" name="password" placeholder="Mot de passe" required>
+                                            <input id="pwdinput" type="password" name="password" placeholder="Password" required>
                                             <i id="pwd" class="fas fa-eye right"></i>
                                         </label>
                                     </div>
-                                    <input type="hidden" name="action" value="addProfesseur">
+                                    <input type="hidden" name="action" value="addAdherent">
                                     <div class="col col-12">
                                         <input type="submit" value="Enregistrer">
                                     </div>
@@ -483,43 +501,49 @@
                     </div>
                 <?php }?>
 
-                <?php if ( 'editProfesseur' == $action ) {
-                        $professeurID = $_REQUEST['id'];
-                        $selectProfesseur = "SELECT * FROM professeurs WHERE id='{$professeurID}'";
-                        $result = mysqli_query( $connection, $selectProfesseur );
+                <?php if ( 'editAdherent' == $action ) {
+                        $adherentID = $_REQUEST['id'];
+                        $selectAdherent = "SELECT * FROM adherents WHERE id='{$adherentID}'";
+                        $result = mysqli_query( $connection, $selectAdherent );
 
-                    $professeur = mysqli_fetch_assoc( $result );?>
-                    <div class="addManager">
+                    $adherent = mysqli_fetch_assoc( $result );?>
+                    <div class="addMoniteur">
                         <div class="main__form">
-                            <div class="main__form--title text-center">Mettre à jour  Professeur</div>
+                            <div class="main__form--title text-center">Mettre à jour  Adherent</div>
                             <form action="add.php" method="POST">
                                 <div class="form-row">
                                     <div class="col col-12">
                                         <label class="input">
                                             <i id="left" class="fas fa-user-circle"></i>
-                                            <input type="text" name="fname" placeholder="Nom" value="<?php echo $professeur['fname']; ?>" required>
+                                            <input type="text" name="fname" placeholder="Nom" value="<?php echo $adherent['fname']; ?>" required>
                                         </label>
                                     </div>
                                     <div class="col col-12">
                                         <label class="input">
                                             <i id="left" class="fas fa-user-circle"></i>
-                                            <input type="text" name="lname" placeholder="Prénom" value="<?php echo $professeur['lname']; ?>" required>
+                                            <input type="text" name="lname" placeholder="Prénom" value="<?php echo $adherent['lname']; ?>" required>
                                         </label>
                                     </div>
                                     <div class="col col-12">
                                         <label class="input">
                                             <i id="left" class="fas fa-envelope"></i>
-                                            <input type="email" name="email" placeholder="Email" value="<?php echo $professeur['email']; ?>" required>
+                                            <input type="email" name="email" placeholder="Email" value="<?php echo $adherent['email']; ?>" required>
                                         </label>
                                     </div>
                                     <div class="col col-12">
                                         <label class="input">
                                             <i id="left" class="fas fa-phone-alt"></i>
-                                            <input type="number" name="phone" placeholder="Phone" value="<?php echo $professeur['phone']; ?>" required>
+                                            <input type="number" name="phone" placeholder="Phone" value="<?php echo $adherent['phone']; ?>" required>
                                         </label>
                                     </div>
-                                    <input type="hidden" name="action" value="updateProfesseur">
-                                    <input type="hidden" name="id" value="<?php echo $professeurID; ?>">
+                                    <div class="col col-12">
+                                        <label class="input">
+                                            <i id="left" class="fas fa-city"></i>
+                                            <input type="text" name="ville" placeholder="Ville" value="<?php echo $adherent['ville']; ?>" required>
+                                        </label>
+                                    </div>
+                                    <input type="hidden" name="action" value="updateAdherent">
+                                    <input type="hidden" name="id" value="<?php echo $adherentID; ?>">
                                     <div class="col col-12">
                                         <input type="submit" value="Enregistrer">
                                     </div>
@@ -529,29 +553,30 @@
                     </div>
                 <?php }?>
 
-                <?php if ( 'deleteProfesseur' == $action ) {
-                        $professeurID = $_REQUEST['id'];
-                        $deleteProfesseur = "DELETE FROM professeurs WHERE id ='{$professeurID}'";
-                        $result = mysqli_query( $connection, $deleteProfesseur );
-                        header( "location:index.php?id=allProfesseur" );
+                <?php if ( 'deleteAdherent' == $action ) {
+                        $adherentID = $_REQUEST['id'];
+                        $deleteAdherent = "DELETE FROM adherents WHERE id ='{$adherentID}'";
+                        $result = mysqli_query( $connection, $deleteAdherent );
+                        header( "location:index.php?id=allAdherent" );
                 }?>
             </div>
-            <!-- ---------------------- Professeur ------------------------ -->
+            <!-- ---------------------- Adherent ------------------------ -->
 
-            <!-- ---------------------- Etudiant ------------------------ -->
-            <div class="etudiant">
-                <?php if ( 'allEtudiant' == $id ) {?>
-                    <div class="allEtudiant">
+            <!-- ---------------------- Seance ------------------------ -->
+            <div class="seance">
+                <?php if ( 'allSeance' == $id ) {?>
+                    <div class="allSeance">
                         <div class="main__table">
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">Nom</th>
-                                        <th scope="col">Email</th>
-                                        <th scope="col">Phone</th>
-                                        <?php if ( 'admin' == $sessionRole || 'manager' == $sessionRole || 'professeur' == $sessionRole ) {?>
-                                            <!-- For Admin, Manager, Professeur-->
+                                        <th scope="col">Moniteur</th>
+                                        <th scope="col">Adhérent</th>
+                                        <th scope="col">Date séance </th>
+                                        <th scope="col">Heure  séance</th>
+                                        <th scope="col">Nombre Heures</th>
+                                        <?php if ( 'admin' == $sessionRole || 'moniteur' == $sessionRole || 'adherent' == $sessionRole ) {?>
+                                            <!-- For Admin, Moniteur, Adherent-->
                                             <th scope="col">Modifier</th>
                                             <th scope="col">Supprimer</th>
                                         <?php }?>
@@ -559,23 +584,30 @@
                                 </thead>
                                 <tbody>
 
-                                    <?php
-                                        $getEtudiant = "SELECT * FROM etudiants";
-                                            $result = mysqli_query( $connection, $getEtudiant );
 
-                                        while ( $etudiant = mysqli_fetch_assoc( $result ) ) {?>
+
+                                    <?php
+                                        $getSeance = "SELECT seances.id, 
+                                        moniteurs.fname AS moniteurFName, moniteurs.lname AS moniteurLName, 
+                                        adherents.fname AS adherentFName, adherents.lname AS adherentLName, 
+                                        dateS, heureS, nbHeures
+                                        FROM seances
+                                        JOIN moniteurs ON seances.idM = moniteurs.id
+                                        JOIN adherents ON seances.idA = adherents.id" ;
+                                            $result = mysqli_query( $connection, $getSeance );
+
+                                        while ( $seance = mysqli_fetch_assoc( $result ) ) {?>
 
                                         <tr>
-                                             <td>
-                                                <center><img class="rounded-circle" width="40" height="40" src="assets/img/<?php echo $etudiant['avatar']; ?>" alt=""></center>
-                                            </td>
-                                            <td><?php printf( "%s %s", $etudiant['fname'], $etudiant['lname'] );?></td>
-                                            <td><?php printf( "%s", $etudiant['email'] );?></td>
-                                            <td><?php printf( "%s", $etudiant['phone'] );?></td>
-                                            <?php if ( 'admin' == $sessionRole || 'manager' == $sessionRole || 'professeur' == $sessionRole ) {?>
-                                                <!-- For Admin, Manager, Professeur-->
-                                                <td><?php printf( "<a href='index.php?action=editEtudiant&id=%s'><i class='fas fa-edit'></i></a>", $etudiant['id'] )?></td>
-                                                <td><?php printf( "<a class='delete' href='index.php?action=deleteEtudiant&id=%s'><i class='fas fa-trash'></i></a>", $etudiant['id'] )?></td>
+                                            <td><?php printf( "%s", $seance['moniteurFName'] .  " ". $seance['moniteurLName'] );?></td>
+                                            <td><?php printf( "%s",  $seance['adherentFName'] .  " ". $seance['adherentLName'] );?></td>
+                                            <td><?php printf( "%s", $seance['dateS'] );?></td>
+                                            <td><?php printf( "%s", $seance['heureS'] );?></td>
+                                            <td><?php printf( "%s", $seance['nbHeures'] );?></td>
+                                            <?php if ( 'admin' == $sessionRole || 'moniteur' == $sessionRole || 'adherent' == $sessionRole ) {?>
+                                                <!-- For Admin, Moniteur, Adherent-->
+                                                <td><?php printf( "<a href='index.php?action=editSeance&id=%s'><i class='fas fa-edit'></i></a>", $seance['id'] )?></td>
+                                                <td><?php printf( "<a class='delete' href='index.php?action=deleteSeance&id=%s'><i class='fas fa-trash'></i></a>", $seance['id'] )?></td>
                                             <?php }?>
                                         </tr>
 
@@ -589,43 +621,73 @@
                     </div>
                 <?php }?>
 
-                <?php if ( 'addEtudiant' == $id ) {?>
-                    <div class="addEtudiant">
+                <?php if ( 'addSeance' == $id ) {
+                    
+                    
+                    // Retrieve existing moniteurs for the dropdown list
+                    $moniteurQuery = "SELECT id, fname, lname FROM moniteurs";
+                    $moniteurResult = mysqli_query( $connection, $moniteurQuery );
+                  
+
+                    // Retrieve existing adherents for the dropdown list
+                    $adherentQuery = "SELECT id, fname, lname FROM adherents";
+                    $adherentResult = mysqli_query( $connection, $adherentQuery );
+                   
+                    
+                    ?>
+                    <div class="addSeance">
                         <div class="main__form">
-                            <div class="main__form--title text-center">Ajouter un nouveau etudiant</div>
+                            <div class="main__form--title text-center">Ajouter un nouveau seance</div>
+                           
                             <form action="add.php" method="POST">
                                 <div class="form-row">
                                     <div class="col col-12">
                                         <label class="input">
                                             <i id="left" class="fas fa-user-circle"></i>
-                                            <input type="text" name="fname" placeholder="Nom" required>
+                                            <select name="idM" required placeholder="Moniteur">
+                                                <?php
+                                                // Populate the dropdown with existing moniteurs
+                                                while ($row = $moniteurResult->fetch_assoc()) {
+                                                    echo "<option value='{$row['id']}' $selected>{$row['fname']} {$row['lname']}</option>";
+                                                }
+                                                ?>
+                                            </select>
                                         </label>
                                     </div>
                                     <div class="col col-12">
                                         <label class="input">
                                             <i id="left" class="fas fa-user-circle"></i>
-                                            <input type="text" name="lname" placeholder="Prénom" required>
+                                            <select name="idA" required placeholder="Adhérent">
+                                                <?php
+                                                // Populate the dropdown with existing adherents
+                                                while ($row = $adherentResult->fetch_assoc()) {
+                                                    echo "<option value='{$row['id']}' $selected>{$row['fname']} {$row['lname']}</option>";
+                                                }
+                                                ?>
+                                            </select>
+                                        </label>
+                                    </div>  
+
+                                    <div class="col col-12">
+                                        <label class="input">
+                                            <i id="left" class="fas fa-calendar-alt"></i>
+                                            <input type="date" name="dateS" placeholder="Date séance"  required>
+                                        </label>
+                                    </div>  
+                                    <div class="col col-12">
+                                        <label class="input">
+                                            <i id="left" class="fas fa-clock"></i>
+                                            <input type="time" name="heureS" placeholder="Heure"  required>
                                         </label>
                                     </div>
                                     <div class="col col-12">
                                         <label class="input">
-                                            <i id="left" class="fas fa-envelope"></i>
-                                            <input type="email" name="email" placeholder="Email" required>
-                                        </label>
+                                            <i id="left" class="fas fa-hourglass-half"></i>
+                                            <input type="number" name="nbHeures" placeholder="Nombre d'heures"  required>
+                                    </label>
                                     </div>
-                                    <div class="col col-12">
-                                        <label class="input">
-                                            <i id="left" class="fas fa-phone-alt"></i>
-                                            <input type="number" name="phone" placeholder="Phone" required>
-                                        </label>
-                                    </div>
-                                    <div class="col col-12">
-                                        <label class="input">
-                                            <i id="left" class="fas fa-key"></i>
-                                            <input id="pwdinput" type="password" name="password" placeholder="Mot de passe" required>
-                                        </label>
-                                    </div>
-                                    <input type="hidden" name="action" value="addEtudiant">
+
+                                    <input type="hidden" name="action" value="addSeance">
                                     <div class="col col-12">
                                         <input type="submit" value="Enregistrer">
                                     </div>
@@ -636,43 +698,82 @@
                     </div>
                 <?php }?>
 
-                <?php if ( 'editEtudiant' == $action ) {
-                        $etudiantID = $_REQUEST['id'];
-                        $selectEtudiant = "SELECT * FROM etudiants WHERE id='{$etudiantID}'";
-                        $result = mysqli_query( $connection, $selectEtudiant );
+                <?php if ( 'editSeance' == $action ) {
+                        $seanceID = $_REQUEST['id'];
+                        $selectSeance = "SELECT * FROM seances WHERE id='{$seanceID}'";
+                        $result = mysqli_query( $connection, $selectSeance );
+                        $seance = mysqli_fetch_assoc( $result );
+                    
 
-                    $etudiant = mysqli_fetch_assoc( $result );?>
-                    <div class="addManager">
+                    // Retrieve existing moniteurs for the dropdown list
+                    $moniteurQuery = "SELECT id, fname, lname FROM moniteurs";
+                    $moniteurResult = mysqli_query( $connection, $moniteurQuery );
+                  
+
+                    // Retrieve existing adherents for the dropdown list
+                    $adherentQuery = "SELECT id, fname, lname FROM adherents";
+                    $adherentResult = mysqli_query( $connection, $adherentQuery );
+                   
+
+
+                    
+                    ?>
+                    <div class="addMoniteur">
                         <div class="main__form">
-                            <div class="main__form--title text-center">Mettre à jour  Etudiant</div>
+                            <div class="main__form--title text-center">Mettre à jour  Seance</div>
+                            
                             <form action="add.php" method="POST">
                                 <div class="form-row">
                                     <div class="col col-12">
                                         <label class="input">
                                             <i id="left" class="fas fa-user-circle"></i>
-                                            <input type="text" name="fname" placeholder="Nom" value="<?php echo $etudiant['fname']; ?>" required>
+                                            <select name="idM" required placeholder="Moniteur">
+                                                <?php
+                                                // Populate the dropdown with existing moniteurs
+                                                while ($row = $moniteurResult->fetch_assoc()) {
+                                                    $selected = ($seanceData['idM'] == $row['id']) ? 'selected' : '';
+                                                    echo "<option value='{$row['id']}' $selected>{$row['fname']} {$row['lname']}</option>";
+                                                }
+                                                ?>
+                                            </select>
                                         </label>
                                     </div>
                                     <div class="col col-12">
                                         <label class="input">
                                             <i id="left" class="fas fa-user-circle"></i>
-                                            <input type="text" name="lname" placeholder="Prénom" value="<?php echo $etudiant['lname']; ?>" required>
+                                            <select name="idA" required placeholder="Adhérent">
+                                                <?php
+                                                // Populate the dropdown with existing adherents
+                                                while ($row = $adherentResult->fetch_assoc()) {
+                                                    $selected = ($seanceData['idA'] == $row['id']) ? 'selected' : '';
+                                                    echo "<option value='{$row['id']}' $selected>{$row['fname']} {$row['lname']}</option>";
+                                                }
+                                                ?>
+                                            </select>
+                                        </label>
+                                    </div>  
+
+                                    <div class="col col-12">
+                                        <label class="input">
+                                            <i id="left" class="fas fa-calendar-alt"></i>
+                                            <input type="date" name="dateS" placeholder="Date séance" value="<?php echo $seance['dateS']; ?>" required>
+                                        </label>
+                                    </div>  
+                                    <div class="col col-12">
+                                        <label class="input">
+                                            <i id="left" class="fas fa-clock"></i>
+                                            <input type="time" name="heureS" placeholder="Heure" value="<?php echo $seance['heureS']; ?>" required>
                                         </label>
                                     </div>
                                     <div class="col col-12">
                                         <label class="input">
-                                            <i id="left" class="fas fa-envelope"></i>
-                                            <input type="email" name="email" placeholder="Email" value="<?php echo $etudiant['email']; ?>" required>
-                                        </label>
+                                            <i id="left" class="fas fa-hourglass-half"></i>
+                                            <input type="number" name="nbHeures" placeholder="Nombre d'heures" value="<?php echo $seance['nbHeures']; ?>" required>
+                                       </label>
                                     </div>
-                                    <div class="col col-12">
-                                        <label class="input">
-                                            <i id="left" class="fas fa-phone-alt"></i>
-                                            <input type="number" name="phone" placeholder="Phone" value="<?php echo $etudiant['phone']; ?>" required>
-                                        </label>
-                                    </div>
-                                    <input type="hidden" name="action" value="updateEtudiant">
-                                    <input type="hidden" name="id" value="<?php echo $etudiantID; ?>">
+
+                                    <input type="hidden" name="action" value="updateSeance">
+                                    <input type="hidden" name="id" value="<?php echo $seanceID; ?>">
                                     <div class="col col-12">
                                         <input type="submit" value="Enregistrer">
                                     </div>
@@ -682,15 +783,15 @@
                     </div>
                 <?php }?>
 
-                <?php if ( 'deleteEtudiant' == $action ) {
-                        $etudiantID = $_REQUEST['id'];
-                        $deleteEtudiant = "DELETE FROM etudiants WHERE id ='{$etudiantID}'";
-                        $result = mysqli_query( $connection, $deleteEtudiant );
-                        header( "location:index.php?id=allEtudiant" );
+                <?php if ( 'deleteSeance' == $action ) {
+                        $seanceID = $_REQUEST['id'];
+                        $deleteSeance = "DELETE FROM seances WHERE id ='{$seanceID}'";
+                        $result = mysqli_query( $connection, $deleteSeance );
+                        header( "location:index.php?id=allSeance" );
                         ob_end_flush();
                 }?>
             </div>
-            <!-- ---------------------- Etudiant ------------------------ -->
+            <!-- ---------------------- Seance ------------------------ -->
 
             <!-- ---------------------- User Profile ------------------------ -->
             <?php if ( 'userProfile' == $id ) {
@@ -744,7 +845,7 @@
                                 </div>
                                 <div class="col col-12">
                                 <?php if ( isset( $_REQUEST['avatarError'] ) ) {
-                                            echo "<p style='color:red;' class='text-center'>Please make sure this file is jpg, png or jpeg</p>";
+                                            echo "<p style='color:red;' class='text-center'>Veuillez vous assurer que ce fichier est is jpg, png or jpeg</p>";
                                     }?>
                                 </div>
                                 <div class="col col-12">
@@ -771,6 +872,12 @@
                                         <input type="number" name="phone" placeholder="Phone" value="<?php echo $data['phone']; ?>" required>
                                     </label>
                                 </div>
+                                <div class="col col-12">
+                                        <label class="input">
+                                            <i id="left" class="fas fa-city"></i>
+                                            <input type="text" name="ville" placeholder="Ville" value="<?php echo $data['ville']; ?>" required>
+                                        </label>
+                                    </div>
                                 <div class="col col-12">
                                     <label class="input">
                                         <i id="left" class="fas fa-key"></i>

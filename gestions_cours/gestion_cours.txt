@@ -70,4 +70,3 @@ Login as Seance:
 
 	Or if you have a Seance account
 	login just type your email and passwod and role=seance
-

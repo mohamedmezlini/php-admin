@@ -46,7 +46,7 @@ if ( !$connection ) {
 
         if ( $fname && $lname && $lname && $phone && $password ) {
             $hashPassword = password_hash( $password, PASSWORD_BCRYPT );
-            $query = "INSERT INTO adherents(fname,lname,email,phone,password) VALUES ('{$fname}','$lname','$email','$phone','$ville','$hashPassword')";
+            $query = "INSERT INTO adherents(fname,lname,email,phone,ville,password) VALUES ('{$fname}','$lname','$email','$phone','$ville','$hashPassword')";
             mysqli_query( $connection, $query );
             header( "location:index.php?id=allAdherent" );
         }
